@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname + '../../' + '/public'));
 
 // Handlebars
 app.engine('handlebars', engine({ 
@@ -17,7 +17,7 @@ app.engine('handlebars', engine({
     layoutsDir: path.join(__dirname, "views", "layouts")
 }));
 app.set('view engine', 'handlebars');
-app.set('views', './views');
+app.set('views', path.join(__dirname, "views"));
 
 app.get("/", (req, res) =>{
     res.render("index");
