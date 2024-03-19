@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use(express.static(__dirname + '../../' + '/public'));
+app.use(express.static(__dirname + '../../' + 'public'));
 
 // Handlebars
 app.engine('handlebars', engine({ 
