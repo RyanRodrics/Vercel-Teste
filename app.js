@@ -12,9 +12,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Handlebars
-app.engine('handlebars', engine({ defaultLayout: 'main', runtimeOptions: {
-    allowProtoPropertiesBydefault: true, allowProtoMethodsByDefault: true
-}}));
+app.engine('handlebars', engine({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
